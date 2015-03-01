@@ -37,6 +37,13 @@ typedef struct {
     return self;
 }
 
+- (void) resetLedStatus {
+    _ledStatus.capsLockOn = _ledStatus.numLockOn = _ledStatus.scrollLockOn = NO;
+    [self setLED:ledCaps toValue:NO];
+    [self setLED:ledNum  toValue:NO];
+    [self setLED:ledCaps toValue:NO];
+}
+
 - (void) setLED:(UserActivityNotifyLED) led toValue:(BOOL) value {
     // access hardware to flag notification with appropriate LED
     manipulate_led(led, value);

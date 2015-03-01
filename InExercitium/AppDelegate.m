@@ -33,7 +33,10 @@
     
     _userActivityNotifier = [[UserActivityNotifier alloc] init];
     _userActivityWatcher  = [[UserActivityWatcher alloc] initWithDelegate:_userActivityNotifier];
+
+    // Configuration
     _userActivityWatcher.notifyForCalendarEvents = YES;
+    _userActivityWatcher.notifyForRunningApplication = YES;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -45,8 +48,13 @@
     [item setState:((item.state == NSOnState)?NSOffState:NSOnState)];
     if (item.state == NSOnState) {
         [_userActivityWatcher startWatching];
+        _statusItem.image = [NSImage imageNamed:@"On-Air_18.png"];
+        [_statusItem.image setTemplate:YES];
     } else {
         [_userActivityWatcher stopWatching];
+        [_userActivityNotifier resetLedStatus];
+        _statusItem.image = [NSImage imageNamed:@"On-Air_18_incative.png"];
+        [_statusItem.image setTemplate:YES];
     }
 }
 

@@ -28,6 +28,8 @@ typedef struct {
 
 @interface UserActivityNotifier : NSObject<UserActivityNotifierDelegate>
 
+- (void) resetLedStatus;
+
 @property (readwrite, nonatomic) UserActivityNotifyLED ledForCalendarEvents;
 @property (readwrite, nonatomic) UserActivityNotifyLED ledForRunningApplication;
 @property (readwrite, nonatomic) UserActivityNotifyLED ledForAdiumStatus;

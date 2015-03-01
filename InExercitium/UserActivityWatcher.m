@@ -8,6 +8,7 @@
 
 #import "UserActivityWatcher.h"
 #import "UserActivityNotifier.h"
+#import <AppKit/AppKit.h>     // Application access
 #import <EventKit/EventKit.h> // Calendar access
 
 
@@ -109,7 +110,21 @@
 }
 
 - (void) watchForRunningApplication {
-    _userActivityFlags.busyByRunningApplication = NO;
+    const NSArray* apps = [[NSWorkspace sharedWorkspace] runningApplications];
+    BOOL runningAppFound = NO;
+    for (NSRunningApplication* app in apps) {
+        const NSString* appId = [app bundleIdentifier];
+        if ([appId isEqualToString: @"com.citrixonline.gotomeeting"]) {
+            runningAppFound = YES;
+            break;
+        }
+        if ([appId isEqualToString:@"com.skype.skype"]) {
+            runningAppFound = YES;
+            break;
+        }
+    }
+    
+    _userActivityFlags.busyByRunningApplication = runningAppFound;
 }
 
 - (void) watchForAdiumStatus {

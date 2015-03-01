@@ -17,6 +17,7 @@
 		9A0AF6631AA1EC700059747B /* UserActivityWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6621AA1EC700059747B /* UserActivityWatcher.m */; };
 		9A0AF6661AA1F1D70059747B /* UserActivityNotifier.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6651AA1F1D70059747B /* UserActivityNotifier.mm */; };
 		9A0AF66B1AA3103E0059747B /* KeyboardLeds.c in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6691AA3103E0059747B /* KeyboardLeds.c */; };
+		9A0AF66E1AA374EB0059747B /* On-Air_18_incative.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AF66D1AA374EB0059747B /* On-Air_18_incative.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9A0AF6651AA1F1D70059747B /* UserActivityNotifier.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UserActivityNotifier.mm; sourceTree = "<group>"; };
 		9A0AF6691AA3103E0059747B /* KeyboardLeds.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KeyboardLeds.c; sourceTree = "<group>"; };
 		9A0AF66A1AA3103E0059747B /* KeyboardLeds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLeds.h; sourceTree = "<group>"; };
+		9A0AF66D1AA374EB0059747B /* On-Air_18_incative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "On-Air_18_incative.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				9A0AF65C1AA1B79C0059747B /* On-Air_18.png */,
+				9A0AF66D1AA374EB0059747B /* On-Air_18_incative.png */,
 				9A0AF6371AA18DF40059747B /* Info.plist */,
 				9A0AF63B1AA18DF40059747B /* main.m */,
 			);
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0AF63E1AA18DF40059747B /* Images.xcassets in Resources */,
+				9A0AF66E1AA374EB0059747B /* On-Air_18_incative.png in Resources */,
 				9A0AF65D1AA1B79C0059747B /* On-Air_18.png in Resources */,
 				9A0AF6411AA18DF40059747B /* MainMenu.xib in Resources */,
 			);
