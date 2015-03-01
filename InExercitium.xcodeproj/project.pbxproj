@@ -12,6 +12,11 @@
 		9A0AF63E1AA18DF40059747B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AF63D1AA18DF40059747B /* Images.xcassets */; };
 		9A0AF6411AA18DF40059747B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AF63F1AA18DF40059747B /* MainMenu.xib */; };
 		9A0AF64D1AA18DF40059747B /* InExercitiumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF64C1AA18DF40059747B /* InExercitiumTests.m */; };
+		9A0AF65D1AA1B79C0059747B /* On-Air_18.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AF65C1AA1B79C0059747B /* On-Air_18.png */; };
+		9A0AF65F1AA1C1BD0059747B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0AF65E1AA1C1BD0059747B /* EventKit.framework */; };
+		9A0AF6631AA1EC700059747B /* UserActivityWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6621AA1EC700059747B /* UserActivityWatcher.m */; };
+		9A0AF6661AA1F1D70059747B /* UserActivityNotifier.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6651AA1F1D70059747B /* UserActivityNotifier.mm */; };
+		9A0AF66B1AA3103E0059747B /* KeyboardLeds.c in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6691AA3103E0059747B /* KeyboardLeds.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,14 @@
 		9A0AF6461AA18DF40059747B /* InExercitiumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InExercitiumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0AF64B1AA18DF40059747B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A0AF64C1AA18DF40059747B /* InExercitiumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InExercitiumTests.m; sourceTree = "<group>"; };
+		9A0AF65C1AA1B79C0059747B /* On-Air_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "On-Air_18.png"; sourceTree = SOURCE_ROOT; };
+		9A0AF65E1AA1C1BD0059747B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		9A0AF6611AA1EC700059747B /* UserActivityWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActivityWatcher.h; sourceTree = "<group>"; };
+		9A0AF6621AA1EC700059747B /* UserActivityWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActivityWatcher.m; sourceTree = "<group>"; };
+		9A0AF6641AA1F1D70059747B /* UserActivityNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActivityNotifier.h; sourceTree = "<group>"; };
+		9A0AF6651AA1F1D70059747B /* UserActivityNotifier.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UserActivityNotifier.mm; sourceTree = "<group>"; };
+		9A0AF6691AA3103E0059747B /* KeyboardLeds.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KeyboardLeds.c; sourceTree = "<group>"; };
+		9A0AF66A1AA3103E0059747B /* KeyboardLeds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLeds.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A0AF65F1AA1C1BD0059747B /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +75,7 @@
 				9A0AF6351AA18DF40059747B /* InExercitium */,
 				9A0AF6491AA18DF40059747B /* InExercitiumTests */,
 				9A0AF6341AA18DF40059747B /* Products */,
+				9A0AF66C1AA314990059747B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +93,12 @@
 			children = (
 				9A0AF6381AA18DF40059747B /* AppDelegate.h */,
 				9A0AF6391AA18DF40059747B /* AppDelegate.m */,
+				9A0AF6611AA1EC700059747B /* UserActivityWatcher.h */,
+				9A0AF6621AA1EC700059747B /* UserActivityWatcher.m */,
+				9A0AF6641AA1F1D70059747B /* UserActivityNotifier.h */,
+				9A0AF6651AA1F1D70059747B /* UserActivityNotifier.mm */,
+				9A0AF66A1AA3103E0059747B /* KeyboardLeds.h */,
+				9A0AF6691AA3103E0059747B /* KeyboardLeds.c */,
 				9A0AF63D1AA18DF40059747B /* Images.xcassets */,
 				9A0AF63F1AA18DF40059747B /* MainMenu.xib */,
 				9A0AF6361AA18DF40059747B /* Supporting Files */,
@@ -88,6 +109,7 @@
 		9A0AF6361AA18DF40059747B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A0AF65C1AA1B79C0059747B /* On-Air_18.png */,
 				9A0AF6371AA18DF40059747B /* Info.plist */,
 				9A0AF63B1AA18DF40059747B /* main.m */,
 			);
@@ -109,6 +131,14 @@
 				9A0AF64B1AA18DF40059747B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A0AF66C1AA314990059747B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A0AF65E1AA1C1BD0059747B /* EventKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0AF63E1AA18DF40059747B /* Images.xcassets in Resources */,
+				9A0AF65D1AA1B79C0059747B /* On-Air_18.png in Resources */,
 				9A0AF6411AA18DF40059747B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A0AF63C1AA18DF40059747B /* main.m in Sources */,
+				9A0AF6661AA1F1D70059747B /* UserActivityNotifier.mm in Sources */,
+				9A0AF66B1AA3103E0059747B /* KeyboardLeds.c in Sources */,
+				9A0AF6631AA1EC700059747B /* UserActivityWatcher.m in Sources */,
 				9A0AF63A1AA18DF40059747B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@class UserActivityWatcher;
+@class UserActivityNotifier;
 
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+    UserActivityWatcher*    _userActivityWatcher;
+    UserActivityNotifier*   _userActivityNotifier;
+}
+
+@property (strong, nonatomic) NSStatusItem * statusItem;
+@property (assign, nonatomic) BOOL           onAirOn;
 
 @end
 
