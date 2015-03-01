@@ -31,7 +31,7 @@ typedef struct {
 - (id) init {
     self = [super init];
     if (self) {
-        self.ledForAllNotifications = ledNum;
+        self.ledForAllNotifications = ledCaps;
     }
     
     return self;
@@ -63,7 +63,7 @@ typedef struct {
 
     newStatus.capsLockOn   = statusMap[ledCaps];
     newStatus.numLockOn    = statusMap[ledNum];
-    newStatus.scrollLockOn = statusMap[ledNum];
+    newStatus.scrollLockOn = statusMap[ledScroll];
     
     if (newStatus.capsLockOn != _ledStatus.capsLockOn) {
         _ledStatus.capsLockOn = newStatus.capsLockOn;
@@ -73,9 +73,9 @@ typedef struct {
         _ledStatus.numLockOn = newStatus.numLockOn;
         [self setLED:ledNum toValue:_ledStatus.numLockOn];
     }
-    if (newStatus.capsLockOn != _ledStatus.capsLockOn) {
-        _ledStatus.capsLockOn = newStatus.capsLockOn;
-        [self setLED:ledCaps toValue:_ledStatus.capsLockOn];
+    if (newStatus.scrollLockOn != _ledStatus.scrollLockOn) {
+        _ledStatus.scrollLockOn = newStatus.scrollLockOn;
+        [self setLED:ledScroll toValue:_ledStatus.scrollLockOn];
     }
     
     NSLog(@"LED caps,num,scroll: %d%d%d", _ledStatus.capsLockOn, _ledStatus.numLockOn, _ledStatus.scrollLockOn);
