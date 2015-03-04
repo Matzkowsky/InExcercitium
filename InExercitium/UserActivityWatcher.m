@@ -55,7 +55,7 @@
     if (_timer) {
         return;
     }
-    _timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(watchForUserActivity:) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:6.0 target:self selector:@selector(watchForUserActivity:) userInfo:nil repeats:YES];
 }
 
 - (void) stopWatching {
@@ -114,14 +114,14 @@
     BOOL runningAppFound = NO;
     for (NSRunningApplication* app in apps) {
         const NSString* appId = [app bundleIdentifier];
-        if ([appId isEqualToString: @"com.citrixonline.gotomeeting"]) {
+        if ([appId isEqualToString: @"com.citrixonline.GoToMeeting"]) {
             runningAppFound = YES;
             break;
         }
-        if ([appId isEqualToString:@"com.skype.skype"]) {
-            runningAppFound = YES;
-            break;
-        }
+//        if ([appId isEqualToString:@"com.skype.skype"]) {
+//            runningAppFound = YES;
+//            break;
+//        }
     }
     
     _userActivityFlags.busyByRunningApplication = runningAppFound;
