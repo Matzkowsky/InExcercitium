@@ -19,9 +19,11 @@ typedef struct {
     BOOL scrollLockOn;
 } LedStatus;
 
+typedef std::map<int, BOOL> LEDStatusMap;
 
 @interface UserActivityNotifier () {
-    LedStatus   _ledStatus;
+    LedStatus    _ledStatus;
+    LEDStatusMap _ledCustomState;
 }
 - (void) setLED:(UserActivityNotifyLED) led toValue:(BOOL) value;
 @end
@@ -31,7 +33,8 @@ typedef struct {
 - (id) init {
     self = [super init];
     if (self) {
-        self.ledForAllNotifications = ledCaps;
+        self.ledForAllNotifications = ledNum;
+        [self resetLedStatus];
     }
     
     return self;
@@ -42,6 +45,9 @@ typedef struct {
     [self setLED:ledCaps toValue:NO];
     [self setLED:ledNum  toValue:NO];
     [self setLED:ledCaps toValue:NO];
+    _ledCustomState[ledCaps]   = NO;
+    _ledCustomState[ledNum]    = NO;
+    _ledCustomState[ledScroll] = NO;
 }
 
 - (void) setLED:(UserActivityNotifyLED) led toValue:(BOOL) value {
@@ -53,16 +59,23 @@ typedef struct {
     _ledForAllNotifications = _ledForCalendarEvents = _ledForRunningApplication = _ledForAdiumStatus = _ledForPhoneCall = ledForAllNotifications;
 }
 
+- (void) toggleCustomStateForLed:(UserActivityNotifyLED) led {
+    _ledCustomState[led] = !_ledCustomState[led];
+}
+
+- (BOOL) customStateForLed:(UserActivityNotifyLED) led {
+    return _ledCustomState[led];
+}
+
 #pragma mark UserActivityNotifierDelegate
 
 - (void) notifyUserActivityFlags:(const UserActivityFlags*) userActivityFlags {
-    typedef std::map<int, BOOL> LEDStatusMap;
     LEDStatusMap statusMap;
     LedStatus newStatus;
 
-    statusMap[ledCaps]   = NO;
-    statusMap[ledNum]    = NO;
-    statusMap[ledScroll] = NO;
+    statusMap[ledCaps]   = _ledCustomState[ledCaps];
+    statusMap[ledNum]    = _ledCustomState[ledNum];
+    statusMap[ledScroll] = _ledCustomState[ledScroll];
     statusMap[_ledForCalendarEvents]     |= userActivityFlags->busyByCalendarEvent;
     statusMap[_ledForRunningApplication] |= userActivityFlags->busyByRunningApplication;
     statusMap[_ledForAdiumStatus]        |= userActivityFlags->busyByAdiumStatus;

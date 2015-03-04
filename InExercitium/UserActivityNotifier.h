@@ -29,6 +29,8 @@ typedef struct {
 @interface UserActivityNotifier : NSObject<UserActivityNotifierDelegate>
 
 - (void) resetLedStatus;
+- (void) toggleCustomStateForLed:(UserActivityNotifyLED) led;
+- (BOOL) customStateForLed:(UserActivityNotifyLED) led;
 
 @property (readwrite, nonatomic) UserActivityNotifyLED ledForCalendarEvents;
 @property (readwrite, nonatomic) UserActivityNotifyLED ledForRunningApplication;

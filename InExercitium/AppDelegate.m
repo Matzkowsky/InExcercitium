@@ -25,6 +25,7 @@
 
     NSMenu* menu = [[NSMenu alloc] init];
     [menu addItemWithTitle:@"Active" action:@selector(activeClicked:) keyEquivalent:@""];
+    [menu addItemWithTitle:@"Busy"   action:@selector(busyClicked:)   keyEquivalent:@""];
     [menu addItemWithTitle:@"Quit"   action:@selector(quitClicked:)   keyEquivalent:@""];
     [[menu itemAtIndex:0] setState:NSOnState];
 
@@ -70,6 +71,12 @@
         [[NSApplication sharedApplication] terminate:self];
         return;
     }
+}
+
+- (void) busyClicked:(id) sender {
+    [_userActivityNotifier toggleCustomStateForLed:ledNum];
+    NSMenuItem* item = sender;
+    item.state = ([_userActivityNotifier customStateForLed:ledNum]?NSOnState:NSOffState);
 }
 
 
