@@ -18,6 +18,7 @@
 		9A0AF6661AA1F1D70059747B /* UserActivityNotifier.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6651AA1F1D70059747B /* UserActivityNotifier.mm */; };
 		9A0AF66B1AA3103E0059747B /* KeyboardLeds.c in Sources */ = {isa = PBXBuildFile; fileRef = 9A0AF6691AA3103E0059747B /* KeyboardLeds.c */; };
 		9A0AF66E1AA374EB0059747B /* On-Air_18_incative.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A0AF66D1AA374EB0059747B /* On-Air_18_incative.png */; };
+		9A5898F91AA6F98D00077D55 /* On Air Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9A5898F81AA6F98D00077D55 /* On Air Icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9A0AF6691AA3103E0059747B /* KeyboardLeds.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KeyboardLeds.c; sourceTree = "<group>"; };
 		9A0AF66A1AA3103E0059747B /* KeyboardLeds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardLeds.h; sourceTree = "<group>"; };
 		9A0AF66D1AA374EB0059747B /* On-Air_18_incative.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "On-Air_18_incative.png"; sourceTree = SOURCE_ROOT; };
+		9A5898F81AA6F98D00077D55 /* On Air Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "On Air Icon.icns"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		9A0AF6361AA18DF40059747B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A5898F81AA6F98D00077D55 /* On Air Icon.icns */,
 				9A0AF65C1AA1B79C0059747B /* On-Air_18.png */,
 				9A0AF66D1AA374EB0059747B /* On-Air_18_incative.png */,
 				9A0AF6371AA18DF40059747B /* Info.plist */,
@@ -224,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5898F91AA6F98D00077D55 /* On Air Icon.icns in Resources */,
 				9A0AF63E1AA18DF40059747B /* Images.xcassets in Resources */,
 				9A0AF66E1AA374EB0059747B /* On-Air_18_incative.png in Resources */,
 				9A0AF65D1AA1B79C0059747B /* On-Air_18.png in Resources */,
@@ -436,6 +440,7 @@
 				9A0AF6521AA18DF40059747B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A0AF6531AA18DF40059747B /* Build configuration list for PBXNativeTarget "InExercitiumTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +449,7 @@
 				9A0AF6551AA18DF40059747B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
