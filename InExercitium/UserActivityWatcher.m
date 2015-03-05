@@ -15,6 +15,8 @@
 @interface UserActivityWatcher () {
     NSTimer*            _timer;
     EKEventStore*       _store;
+    BOOL                _storeAccessRequestInProgress;
+    NSDate*             _storeAccessTimeStamp;
     UserActivityFlags   _userActivityFlags;
 }
 - (void) watchForUserActivity:(id) sender;
@@ -90,9 +92,31 @@
 }
 
 - (void) watchForCalendarEvents {
-    if (_store == nil) {
-        _store = [[EKEventStore alloc] initWithAccessToEntityTypes:EKEntityMaskEvent];
+    if (_storeAccessRequestInProgress) {
+        return;
     }
+    if (_store == nil) {
+        _storeAccessRequestInProgress = YES;
+        _store = [[EKEventStore alloc] init];
+        [_store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+            if (!granted) {
+                _notifyForCalendarEvents = NO;
+                _store = nil;
+            }
+            _storeAccessRequestInProgress = NO;
+        }];
+        return;
+    }
+    
+    if (_storeAccessTimeStamp == nil) {
+        _storeAccessTimeStamp = [NSDate date];
+    } else
+    if ([_storeAccessTimeStamp timeIntervalSinceNow] >= -60.0) {
+        // limit calendar access to once per minute
+        return;
+    }
+    _storeAccessTimeStamp = [NSDate date];
+
     // Fetch event with a predicate
     //NSCalendar *calendar = [NSCalendar currentCalendar];
     NSPredicate *predicate = [_store predicateForEventsWithStartDate:[NSDate date] endDate:[NSDate date] calendars:nil];
