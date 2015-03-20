@@ -124,11 +124,13 @@
 
     if ([events count] > 0) {
         // We accept only event which are accepted or those created by our own.
-        BOOL eventConfirmed = YES;
+        BOOL eventConfirmed = NO;
         for (EKEvent* event in events) {
-            NSLog(@"%@", [event title]);
-            if (event.status == EKEventStatusCanceled || event.status == EKEventStatusTentative) {
-                eventConfirmed = NO;
+            NSLog(@"%@ (%@)", event.title, event.calendar.title);
+            if ([event.calendar.title isEqualToString:@"Calendar" ]) {
+                if (event.status == EKEventStatusConfirmed || event.status == EKEventStatusNone) {
+                    eventConfirmed = YES;
+                }
             }
         }
         _userActivityFlags.busyByCalendarEvent = eventConfirmed;
