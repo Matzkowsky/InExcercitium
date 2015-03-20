@@ -123,11 +123,15 @@
     NSArray *events = [_store eventsMatchingPredicate:predicate];
 
     if ([events count] > 0) {
+        // We accept only event which are accepted or those created by our own.
+        BOOL eventConfirmed = YES;
         for (EKEvent* event in events) {
             NSLog(@"%@", [event title]);
+            if (event.status == EKEventStatusCanceled || event.status == EKEventStatusTentative) {
+                eventConfirmed = NO;
+            }
         }
-        
-        _userActivityFlags.busyByCalendarEvent = YES;
+        _userActivityFlags.busyByCalendarEvent = eventConfirmed;
     } else {
         _userActivityFlags.busyByCalendarEvent = NO;
     }
