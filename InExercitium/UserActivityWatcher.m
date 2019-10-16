@@ -144,7 +144,7 @@
     BOOL runningAppFound = NO;
     for (NSRunningApplication* app in apps) {
         const NSString* appId = [app bundleIdentifier];
-        if ([appId isEqualToString: @"com.citrixonline.GoToMeeting"]) {
+        if ([appId isEqualToString: @"com.logmein.GoToMeeting"]) {
             runningAppFound = YES;
             break;
         }
