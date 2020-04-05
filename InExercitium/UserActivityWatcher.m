@@ -54,15 +54,15 @@
 }
 
 - (void) startWatching {
-    if (_timer) {
+    if (self->_timer) {
         return;
     }
-    _timer = [NSTimer scheduledTimerWithTimeInterval:6.0 target:self selector:@selector(watchForUserActivity:) userInfo:nil repeats:YES];
+    self->_timer = [NSTimer scheduledTimerWithTimeInterval:6.0 target:self selector:@selector(watchForUserActivity:) userInfo:nil repeats:YES];
 }
 
 - (void) stopWatching {
-    [_timer invalidate];
-    _timer = nil;
+    [self->_timer invalidate];
+    self->_timer = nil;
 }
 
 - (void) watchForUserActivity:(id)sender {
@@ -100,10 +100,10 @@
         _store = [[EKEventStore alloc] init];
         [_store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
             if (!granted) {
-                _notifyForCalendarEvents = NO;
-                _store = nil;
+                self->_notifyForCalendarEvents = NO;
+                self->_store = nil;
             }
-            _storeAccessRequestInProgress = NO;
+            self->_storeAccessRequestInProgress = NO;
         }];
         return;
     }

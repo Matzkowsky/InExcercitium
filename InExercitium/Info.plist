@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>On Air Icon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.matzkowsky.soft.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -22,15 +22,19 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 Matzkowsky Soft. All rights reserved.</string>
+	<string>Copyright © 2020 Matzkowsky Soft. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>$(EXECUTABLE_NAME) requests access to your calendar to trigger actions when you&apos;re busy.</string>
 </dict>
 </plist>
